@@ -1,0 +1,32 @@
+{
+  "name": "saga-framework",
+  "version": "0.0.1",
+  "description": "Tiny Saga framework for handling distributed transactions in the microservices architecture",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "Viacheslav Panevskyi",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --config ./jest-config.js",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "format": "prettier --write \"src/**/*.ts\""
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^25.2.1",
+    "@typescript-eslint/eslint-plugin": "^2.27.0",
+    "@typescript-eslint/parser": "^2.27.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-import": "^2.20.2",
+    "jest": "^25.3.0",
+    "prettier": "^2.0.4",
+    "ts-jest": "^25.3.1",
+    "ts-sinon": "^1.0.25",
+    "typescript": "^3.8.3"
+  },
+  "files": [
+    "dist/**/*"
+  ]
+}
