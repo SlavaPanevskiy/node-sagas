@@ -1,6 +1,5 @@
 import { SagaFlow } from './saga-flow';
-import SagaCompensationFailed from './exceptions/saga-compensation-failed';
-import SagaExecutionFailed from './exceptions/saga-exuction-failed';
+import { SagaCompensationFailed, SagaExecutionFailed } from './exceptions';
 
 export enum SagaStates {
   New = 'New',

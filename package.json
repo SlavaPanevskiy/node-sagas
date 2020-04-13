@@ -1,7 +1,7 @@
 {
-  "name": "saga-framework",
+  "name": "node-sagas",
   "version": "0.0.1",
-  "description": "Tiny Saga framework for handling distributed transactions in the microservices architecture",
+  "description": "Library for handling distributed transactions in the microservices architecture",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "author": "Viacheslav Panevskyi",
@@ -10,7 +10,12 @@
     "build": "tsc",
     "test": "jest --config ./jest-config.js",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
-    "format": "prettier --write \"src/**/*.ts\""
+    "format": "prettier --write \"src/**/*.ts\"",
+    "prepare" : "npm run build",
+    "prepublishOnly" : "npm test && npm run lint",
+    "preversion" : "npm run lint",
+    "version" : "npm run format",
+    "postversion" : "git push && git push --tags"
   },
   "dependencies": {},
   "devDependencies": {
@@ -28,5 +33,9 @@
   },
   "files": [
     "dist/**/*"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SlavaPanevskiy/node-sagas.git"
+  }
 }

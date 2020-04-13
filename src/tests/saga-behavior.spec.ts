@@ -1,8 +1,7 @@
 import { SagaBuilder } from '../saga-builder';
 import { SagaStates } from '../saga';
 import { SagaParams } from './saga-params';
-import SagaCompensationFailed from '../exceptions/saga-compensation-failed';
-import SagaExecutionFailed from '../exceptions/saga-exuction-failed';
+import { SagaExecutionFailed } from '../exceptions';
 
 describe('Saga functionality', () => {
   it('should build and execute saga with invocation steps', async () => {
@@ -36,17 +35,9 @@ describe('Saga functionality', () => {
       })
       .build();
 
-    try {
-      await saga.execute(new SagaParams());
-    } catch (e) {
-      if (e instanceof SagaExecutionFailed) {
-        // Error handling
-      }
-      if (e instanceof SagaCompensationFailed) {
-        // Error handling
-      }
-    }
-
+    await expect(saga.execute(new SagaParams())).rejects.toThrow(
+      SagaExecutionFailed,
+    );
     expect(saga.getState()).toBe(SagaStates.CompensationComplete);
   });
 });
