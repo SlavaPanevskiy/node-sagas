@@ -1,6 +1,6 @@
 {
   "name": "node-sagas",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Library for handling distributed transactions in the microservices architecture",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
