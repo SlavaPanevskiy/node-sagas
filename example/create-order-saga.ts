@@ -1,5 +1,5 @@
 import { CreateOrderSagaParams } from './create-order-saga-params';
-import { Saga, SagaBuilder, SagaCompensationFailed, SagaExecutionFailed } from "../src";
+import { Saga, SagaBuilder, SagaCompensationFailed, SagaExecutionFailed } from "../";
 
 export class CreateOrderSaga {
 
@@ -9,10 +9,10 @@ export class CreateOrderSaga {
       return await saga.execute(params);
     } catch (e) {
       if (e instanceof SagaExecutionFailed) {
-        // Error handling
+        // Throws, when invocation flow was failed, but compensation has been completed
       }
       if (e instanceof SagaCompensationFailed) {
-        // Error handling
+        // Throws, when compensation flow was failed
       }
     }
   }

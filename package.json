@@ -38,5 +38,5 @@
     "type": "git",
     "url": "git+https://github.com/SlavaPanevskiy/node-sagas.git"
   },
-  "keywords": ["saga", "sagas", "microservice", "microservices", "distributed transaction"]
+  "keywords": ["saga", "sagas", "microservice", "microservices", "distributed transaction", "msa", "microservice-architecture"]
 }

@@ -1,4 +1,3 @@
-# Currently unstable alpha version
 # Node sagas 
 This is a repository for the `node-sagas` package.
 `node-sagas` is a convenient library for managing data consistency in a microservice architecture.
@@ -53,10 +52,10 @@ The first main class is `SagaBuilder`.
       return await saga.execute(params);
     } catch (e) {
       if (e instanceof SagaExecutionFailed) {
-        // Error handling
+        // Throws, when invocation flow was failed, but compensation has been completed
       }
       if (e instanceof SagaCompensationFailed) {
-        // Error handling
+        // Throws, when compensation flow was failed
       }
     }
 ```
