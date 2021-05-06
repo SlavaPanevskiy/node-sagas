@@ -7,11 +7,11 @@ export class Step<T> {
     this.name = name;
   }
 
-  public setInvocation(method: (params: T) => void): void {
+  public setInvocation(method: (params: T) => Promise<void> | void): void {
     this.invocation = method;
   }
 
-  public setCompensation(method: (params: T) => void): void {
+  public setCompensation(method: (params: T) => Promise<void> | void): void {
     this.compensation = method;
   }
 

@@ -17,12 +17,12 @@ export class SagaBuilder<T> {
     return this;
   }
 
-  public invoke(method: (params: T) => void): this {
+  public invoke(method: (params: T) => Promise<void> | void): this {
     this.currentStep.setInvocation(method);
     return this;
   }
 
-  public withCompensation(method: (params: T) => void): this {
+  public withCompensation(method: (params: T) => Promise<void> | void): this {
     this.currentStep.setCompensation(method);
     return this;
   }
